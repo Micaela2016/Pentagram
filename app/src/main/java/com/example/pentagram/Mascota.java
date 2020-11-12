@@ -1,11 +1,15 @@
 package com.example.pentagram;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Mascota  {
+public class Mascota implements Serializable {
 
     private String nombreMascota;
     private int fotoMascota;
@@ -16,6 +20,7 @@ public class Mascota  {
         this.fotoMascota = fotoMascota;
         this.likes = likes;
     }
+
 
     public String getNombreMascota() {
         return nombreMascota;
@@ -47,4 +52,5 @@ public class Mascota  {
         likesMas++;
         likes= String.valueOf(likesMas);
     }
+
 }

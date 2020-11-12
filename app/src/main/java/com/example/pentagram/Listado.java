@@ -14,10 +14,9 @@ import java.util.ArrayList;
 
 public class Listado extends AppCompatActivity {
 
-    ArrayList<Mascota> listmascotas;
+    private ArrayList<Mascota> mascotas;
     private RecyclerView listaMascotas;
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listado);
@@ -28,8 +27,12 @@ public class Listado extends AppCompatActivity {
         llm.setOrientation(LinearLayoutManager.VERTICAL);
 
         listaMascotas.setLayoutManager(llm);
-        inicializarlistaMascotas();
+
+        mascotas = (ArrayList<Mascota> ) getIntent().getSerializableExtra("mascotas");
+        reordenar();
         inicializarAdaptador();
+
+
 
         Toolbar miActionBar = findViewById(R.id.miActionbar);
         setSupportActionBar(miActionBar);
@@ -48,32 +51,50 @@ public class Listado extends AppCompatActivity {
 
     }
 
+    public void reordenar(){
+            int cuentaintercambios=0;
+            Mascota aux;
+            //Usamos un bucle anidado, saldra cuando este ordenado el array
+            for (boolean ordenado=false;!ordenado;){
+                for (int i=0;i<mascotas.size()-1;i++){
+                    if (mascotas.get(i).getLikes().compareTo(mascotas.get(i+1).getLikes())<0){
+                        aux = mascotas.get(i);
+                        //Intercambiamos valores
+                        mascotas.set(i, mascotas.get(i+1));
+                        mascotas.set(i+1, aux);
+                        //indicamos que hay un cambio
+                        cuentaintercambios++;
+                }
+            }
+
+            //Si no hay intercambios, es que esta ordenado.
+            if (cuentaintercambios==0){
+                ordenado=true;
+            }
+            //Inicializamos la variable de nuevo para que empiece a contar de nuevo
+            cuentaintercambios=0;
+        }
+
+
+    }
+
+
+
+
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)
     {
         if(keyCode == KeyEvent.KEYCODE_BACK){
             Intent intent = new Intent(Listado.this, MainActivity.class);
+            intent.putExtra("mascotas", mascotas);
             startActivity(intent);
-            finish();
         }
         return super.onKeyDown(keyCode, event);
     }
-    private void inicializarAdaptador()
-    {
-        MascotaAdaptador adaptador = new MascotaAdaptador(listmascotas,this);
+    private void inicializarAdaptador() {
+        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas,this);
         listaMascotas.setAdapter(adaptador);
     }
-
-    private void inicializarlistaMascotas()
-    {
-        listmascotas = new ArrayList<Mascota>();
-        listmascotas.add(new Mascota("Uma",R.drawable.uma, "5"));
-        listmascotas.add(new Mascota("Oreo", R.drawable.oreo, "5"));
-        listmascotas.add(new Mascota("Olivia", R.drawable.olivia,"3"));
-        listmascotas.add(new Mascota("Otto", R.drawable.otto,"2"));
-        listmascotas.add(new Mascota("Milo", R.drawable.milo,"1"));
-
-    }
-
 
 }

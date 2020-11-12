@@ -21,10 +21,9 @@
             android:layout_marginEnd="3dp">
         </ImageView>
         <RelativeLayout
-            android:paddingTop="3dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <ImageView
+            <ImageButton
                 android:id="@+id/ivBone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -35,24 +34,27 @@
                 android:layout_height="wrap_content"
                 android:text="Uma"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="27dp"
+                android:layout_marginStart="50dp"
                 android:textStyle="bold"
-                android:textSize="20dp"/>
+                android:textSize="30dp"/>
+
             <TextView
                 android:id="@+id/tvNum"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="260dp"
+                android:layout_marginStart="290dp"
                 android:text="5"
-                android:textSize="20dp"
-                android:layout_centerVertical="true"
-                android:textStyle="bold"/>
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
             <ImageView
                 android:id="@+id/ivBonegold"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/hueso_amarillo"
-                android:layout_marginStart="280dp"/>
+                android:layout_marginStart="330dp"
+                android:scaleY="1.3"
+                android:scaleX="1.3"
+                android:src="@drawable/hueso_amarillo" />
         </RelativeLayout>
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.cardview.widget.CardView>

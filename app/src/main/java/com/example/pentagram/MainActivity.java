@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -28,21 +29,23 @@ public class MainActivity extends AppCompatActivity {
         llm.setOrientation(LinearLayoutManager.VERTICAL);
 
         listaMascotas.setLayoutManager(llm); //Para que el objeto se comporte como un linear layout
-        inicializarListaContactos();
+        if (mascotas==null) {
+            inicializarListaContactos();
+        }
+        else mascotas = (ArrayList<Mascota> ) getIntent().getSerializableExtra("mascotas");
         inicializarAdaptador();
-
     }
 
     public void inicializarAdaptador(){
         MascotaAdaptador adaptador= new MascotaAdaptador(mascotas,this);
+
         listaMascotas.setAdapter(adaptador);
     }
 
-    public void pasarActividad(View view)
-    {
+    public void pasarActividad(View v){
         Intent intent = new Intent(this, Listado.class);
+        intent.putExtra("mascotas", mascotas);
         startActivity(intent);
-        finish();
     }
 
     public void inicializarListaContactos(){
