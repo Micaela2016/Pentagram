@@ -15,23 +15,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/huella"
-        android:scaleX="2"/>
+        android:scaleY="1.8"
+        android:scaleX="1.8"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pentagram"
         android:textSize="30dp"
         android:textStyle="bold"
-        android:paddingLeft="40dp"/>
+        android:paddingLeft="85dp"/>
     <ImageView
         android:id="@+id/ivEstrella"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/estrella"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="115dp"
         android:onClick="pasarActividad"
-        android:scaleY="2.8"
-        android:scaleX="2.8"/>
+        android:scaleY="2"
+        android:scaleX="2"/>
 
 
 </androidx.appcompat.widget.Toolbar>
