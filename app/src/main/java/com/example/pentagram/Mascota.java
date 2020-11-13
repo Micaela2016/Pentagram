@@ -13,15 +13,13 @@ public class Mascota implements Serializable {
 
     private String nombreMascota;
     private int fotoMascota;
-    private String likes;
+    private int likes;
 
-    public Mascota(String nombreMascota, int fotoMascota, String likes) {
+    public Mascota(String nombreMascota, int fotoMascota, int likes) {
         this.nombreMascota = nombreMascota;
         this.fotoMascota = fotoMascota;
         this.likes = likes;
     }
-
-
     public String getNombreMascota() {
         return nombreMascota;
     }
@@ -38,19 +36,15 @@ public class Mascota implements Serializable {
         this.fotoMascota = fotoMascota;
     }
 
-    public String getLikes() {
+    public int getLikes() {
         return likes;
     }
 
-    public void setLikes(String likes) {
+    public void setLikes(int likes) {
         this.likes = likes;
     }
 
     public void masLikes(){
-        int likesMas;
-        likesMas=Integer.parseInt(likes);
-        likesMas++;
-        likes= String.valueOf(likesMas);
+        likes++;
     }
-
 }

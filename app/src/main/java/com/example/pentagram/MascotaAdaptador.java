@@ -32,23 +32,22 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         final Mascota mascota = mascotas.get(position);
         mascotaViewHolder.imgMascota.setImageResource(mascota.getFotoMascota());
         mascotaViewHolder.tvNombreMascota.setText(mascota.getNombreMascota());
-        mascotaViewHolder.tvLikes.setText(mascota.getLikes());
+        mascotaViewHolder.tvLikes.setText(""+mascota.getLikes());
 
         mascotaViewHolder.btnLikes.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Toast.makeText(actividad, "Diste like a "+mascota.getNombreMascota(),Toast.LENGTH_SHORT).show();
                 mascota.masLikes();
-                mascotaViewHolder.tvLikes.setText(mascota.getLikes());
+                mascotaViewHolder.tvLikes.setText(""+mascota.getLikes());
 
             }
         });
-
-
     }
-    @Override
+
     public int getItemCount() {
         return mascotas.size();
     }
+
     public static class MascotaViewHolder extends RecyclerView.ViewHolder{
         private ImageView imgMascota;
         private TextView tvNombreMascota;

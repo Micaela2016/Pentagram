@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AcercaDe"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/miActionbar"
+        layout="@layout/actionbar">
+    </include>
+
+    <TextView
+        android:id="@+id/tvDesarrollador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Desarrollador:"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="16dp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/tvNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Micaela Orellano"
+        android:textSize="30dp"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="16dp"
+        >
+    </TextView>
+
+    <TextView
+        android:id="@+id/tvOcupacion"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:text="Estudiante de Ingenieria en sistemas de informacion"
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="16dp"></TextView>
+
+
+</LinearLayout>

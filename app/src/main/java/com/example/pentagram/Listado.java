@@ -11,6 +11,7 @@ import android.view.KeyEvent;
 import android.view.View;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Listado extends AppCompatActivity {
 
@@ -22,16 +23,14 @@ public class Listado extends AppCompatActivity {
         setContentView(R.layout.activity_listado);
 
         listaMascotas = findViewById(R.id.rvMascotas);
-
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
-
         listaMascotas.setLayoutManager(llm);
 
         mascotas = (ArrayList<Mascota> ) getIntent().getSerializableExtra("mascotas");
         reordenar();
-        inicializarAdaptador();
 
+        inicializarAdaptador();
 
 
         Toolbar miActionBar = findViewById(R.id.miActionbar);
@@ -57,7 +56,7 @@ public class Listado extends AppCompatActivity {
             //Usamos un bucle anidado, saldra cuando este ordenado el array
             for (boolean ordenado=false;!ordenado;){
                 for (int i=0;i<mascotas.size()-1;i++){
-                    if (mascotas.get(i).getLikes().compareTo(mascotas.get(i+1).getLikes())<0){
+                    if (mascotas.get(i).getLikes()<(mascotas.get(i+1).getLikes())){
                         aux = mascotas.get(i);
                         //Intercambiamos valores
                         mascotas.set(i, mascotas.get(i+1));
@@ -74,15 +73,8 @@ public class Listado extends AppCompatActivity {
             //Inicializamos la variable de nuevo para que empiece a contar de nuevo
             cuentaintercambios=0;
         }
-
-
     }
 
-
-
-
-
-    @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)
     {
         if(keyCode == KeyEvent.KEYCODE_BACK){
@@ -96,5 +88,4 @@ public class Listado extends AppCompatActivity {
         MascotaAdaptador adaptador = new MascotaAdaptador(mascotas,this);
         listaMascotas.setAdapter(adaptador);
     }
-
 }
