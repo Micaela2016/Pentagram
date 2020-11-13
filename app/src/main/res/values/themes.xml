@@ -7,6 +7,9 @@
         <item name="colorAccent">@color/colorAcentuado</item>
         <item name="colorPrimaryVariant">@color/colorPrimarioClaro</item>
 
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->

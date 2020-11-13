@@ -12,8 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Contacto"></activity>
-        <activity android:name=".AcercaDe" />
+        <activity android:name=".menu_opciones.Contacto"></activity>
+        <activity android:name=".menu_opciones.AcercaDe" />
         <activity
             android:name=".Listado"
             android:parentActivityName=".MainActivity">
@@ -21,7 +21,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".Detalle" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

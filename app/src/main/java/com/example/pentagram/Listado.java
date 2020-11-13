@@ -10,8 +10,9 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 
+import com.example.pentagram.adapter.MascotaAdaptador;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Listado extends AppCompatActivity {
 
@@ -27,9 +28,7 @@ public class Listado extends AppCompatActivity {
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         listaMascotas.setLayoutManager(llm);
 
-        mascotas = (ArrayList<Mascota> ) getIntent().getSerializableExtra("mascotas");
-        reordenar();
-
+        inicializarListaContactos();
         inicializarAdaptador();
 
 
@@ -50,7 +49,7 @@ public class Listado extends AppCompatActivity {
 
     }
 
-    public void reordenar(){
+   /* public void reordenar(){
             int cuentaintercambios=0;
             Mascota aux;
             //Usamos un bucle anidado, saldra cuando este ordenado el array
@@ -73,6 +72,17 @@ public class Listado extends AppCompatActivity {
             //Inicializamos la variable de nuevo para que empiece a contar de nuevo
             cuentaintercambios=0;
         }
+    }*/
+
+    public void inicializarListaContactos(){
+        mascotas = new ArrayList<Mascota>();
+        mascotas.add(new Mascota("Uma",R.drawable.uma, 5));
+        mascotas.add(new Mascota("Oreo", R.drawable.oreo, 5));
+        mascotas.add(new Mascota("Alaska", R.drawable.alaska,3));
+        mascotas.add(new Mascota("Atun", R.drawable.atun,2));
+        mascotas.add(new Mascota("Juanita", R.drawable.juanita,1));
+        mascotas.add(new Mascota("Molly", R.drawable.molly,1));
+        mascotas.add(new Mascota("Roma", R.drawable.roma,1));
     }
 
     public boolean onKeyDown(int keyCode, KeyEvent event)
