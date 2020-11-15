@@ -1,4 +1,4 @@
-package com.example.pentagram;
+package com.example.pentagram.pojo;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -10,7 +10,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Mascota implements Serializable {
-
+    private int id;
     private String nombreMascota;
     private int fotoMascota;
     private int likes;
@@ -20,6 +20,19 @@ public class Mascota implements Serializable {
         this.fotoMascota = fotoMascota;
         this.likes = likes;
     }
+
+    public Mascota(){
+
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getNombreMascota() {
         return nombreMascota;
     }
@@ -42,9 +55,5 @@ public class Mascota implements Serializable {
 
     public void setLikes(int likes) {
         this.likes = likes;
-    }
-
-    public void masLikes(){
-        likes++;
     }
 }

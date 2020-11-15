@@ -3,8 +3,6 @@ package com.example.pentagram;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
@@ -14,10 +12,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.pentagram.adapter.MascotaAdaptador;
 import com.example.pentagram.adapter.PageAdapter;
 import com.example.pentagram.menu_opciones.AcercaDe;
 import com.example.pentagram.menu_opciones.Contacto;
+import com.example.pentagram.vista.fragments.PerfilFragment;
+import com.example.pentagram.vista.fragments.RecyclerViewFragment;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;

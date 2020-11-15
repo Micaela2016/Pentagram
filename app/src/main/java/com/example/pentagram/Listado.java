@@ -11,6 +11,7 @@ import android.view.KeyEvent;
 import android.view.View;
 
 import com.example.pentagram.adapter.MascotaAdaptador;
+import com.example.pentagram.pojo.Mascota;
 
 import java.util.ArrayList;
 
@@ -48,31 +49,6 @@ public class Listado extends AppCompatActivity {
         });
 
     }
-
-   /* public void reordenar(){
-            int cuentaintercambios=0;
-            Mascota aux;
-            //Usamos un bucle anidado, saldra cuando este ordenado el array
-            for (boolean ordenado=false;!ordenado;){
-                for (int i=0;i<mascotas.size()-1;i++){
-                    if (mascotas.get(i).getLikes()<(mascotas.get(i+1).getLikes())){
-                        aux = mascotas.get(i);
-                        //Intercambiamos valores
-                        mascotas.set(i, mascotas.get(i+1));
-                        mascotas.set(i+1, aux);
-                        //indicamos que hay un cambio
-                        cuentaintercambios++;
-                }
-            }
-
-            //Si no hay intercambios, es que esta ordenado.
-            if (cuentaintercambios==0){
-                ordenado=true;
-            }
-            //Inicializamos la variable de nuevo para que empiece a contar de nuevo
-            cuentaintercambios=0;
-        }
-    }*/
 
     public void inicializarListaContactos(){
         mascotas = new ArrayList<Mascota>();

@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.pentagram.Mascota;
 import com.example.pentagram.MascotasPerfil;
 import com.example.pentagram.R;
 

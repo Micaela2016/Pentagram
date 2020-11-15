@@ -1,4 +1,4 @@
-package com.example.pentagram;
+package com.example.pentagram.vista.fragments;
 
 import android.os.Bundle;
 
@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.pentagram.MascotasPerfil;
+import com.example.pentagram.R;
 import com.example.pentagram.adapter.PerfilAdaptador;
 
 import java.util.ArrayList;

@@ -11,7 +11,8 @@ import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.pentagram.Mascota;
+import com.example.pentagram.db.ContructorMascotas;
+import com.example.pentagram.pojo.Mascota;
 import com.example.pentagram.R;
 
 import java.util.ArrayList;
@@ -34,13 +35,15 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         final Mascota mascota = mascotas.get(position);
         mascotaViewHolder.imgMascota.setImageResource(mascota.getFotoMascota());
         mascotaViewHolder.tvNombreMascota.setText(mascota.getNombreMascota());
-        mascotaViewHolder.tvLikes.setText(""+mascota.getLikes());
+        mascotaViewHolder.tvLikes.setText(String.valueOf(mascota.getLikes()) + " ");
 
         mascotaViewHolder.btnLikes.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Toast.makeText(actividad, "Diste like a "+mascota.getNombreMascota(),Toast.LENGTH_SHORT).show();
-                mascota.masLikes();
-                mascotaViewHolder.tvLikes.setText(""+mascota.getLikes());
+
+                ContructorMascotas constructorMascotas = new ContructorMascotas(actividad);
+                constructorMascotas.darLikeCotnacto(mascota);
+                mascotaViewHolder.tvLikes.setText(constructorMascotas.obtenerLikesMascota(mascota) + " " );
 
             }
         });
